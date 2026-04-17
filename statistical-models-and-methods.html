@@ -34,9 +34,15 @@
         <nav class="nav" aria-label="Main">
           <a href="probability.html">Probability</a>
           <a href="statistical-inference.html">Statistical inference</a>
-          <a href="statistical-models-and-methods.html" aria-current="page">
-            Statistical models &amp; methods
-          </a>
+          <div class="nav-dropdown">
+            <a href="statistical-models-and-methods.html" aria-current="page">
+              Statistical models &amp; methods
+            </a>
+            <div class="nav-submenu" role="menu">
+              <a href="time-series.html" role="menuitem">Time series</a>
+              <a href="categorical-data.html" role="menuitem">Categorical data &amp; GLMs</a>
+            </div>
+          </div>
           <a href="about.html">About</a>
         </nav>
       </div>
@@ -84,11 +90,18 @@
           nuisance. Stationarity, AR/MA/ARMA models, ACF/PACF identification, Yule–Walker and
           CLS/MLE estimation, ARIMA/SARIMA, and forecasting all live on a dedicated page.
         </p>
-        <p>
-          <a href="time-series.html">Open time series →</a>
-        </p>
+        <p><a href="time-series.html">Open time series →</a></p>
       </section>
 
+      <section class="content-section">
+        <h2><a href="categorical-data.html" style="text-decoration: none">Categorical data &amp; GLMs →</a></h2>
+        <p>
+          Count distributions, two-by-two tables (odds ratios, relative risk, Simpson’s paradox),
+          independence tests, and the full GLM toolkit—logistic and Poisson regression, Wald /
+          score / LR tests, residuals and goodness-of-fit, and quasi-likelihood for overdispersion.
+        </p>
+        <p><a href="categorical-data.html">Open categorical data &amp; GLMs →</a></p>
+      </section>
     </main>
     <footer class="site-footer">
       <p><a href="index.html">← Back to home</a></p>

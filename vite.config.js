@@ -18,6 +18,7 @@ export default defineConfig({
           "statistical-models-and-methods.html"
         ),
         "time-series": resolve(__dirname, "time-series.html"),
+        "categorical-data": resolve(__dirname, "categorical-data.html"),
       },
     },
   },
