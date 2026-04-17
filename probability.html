@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probability — Nemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" title="ni’s memo">nemo<span>.</span></a>
+        <nav class="nav" aria-label="Main">
+          <a href="probability.html" aria-current="page">Probability</a>
+          <a href="statistical-inference.html">Statistical inference</a>
+          <a href="statistical-models-and-methods.html">Statistical models &amp; methods</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <h1 class="page-title">Probability</h1>
+      <p class="page-sub">
+        Probability quantifies uncertainty. It gives rules for combining events, updating beliefs
+        when information arrives, and describing how averages behave as evidence accumulates.
+      </p>
+
+      <section class="content-section">
+        <h2>Probability</h2>
+        <p>
+          A probability space <code style="color: var(--text)">(Ω, ℱ, P)</code> pairs a sample space
+          of outcomes with a σ-algebra of measurable events and a measure
+          <code style="color: var(--text)">P</code> that assigns each event a number in
+          <code style="color: var(--text)">[0, 1]</code>. Kolmogorov’s axioms—non-negativity,
+          normalization <code style="color: var(--text)">P(Ω) = 1</code>, and countable
+          additivity—keep the calculus coherent even when events become infinite unions.
+        </p>
+        <p>
+          Conditional probability rescales the measure to a known event:
+          <code style="color: var(--text)">P(A | B) = P(A ∩ B) / P(B)</code> when
+          <code style="color: var(--text)">P(B) &gt; 0</code>. Bayes’ rule reverses the direction of
+          conditioning, and the law of total probability decomposes an event across a partition.
+        </p>
+        <ul>
+          <li>Independence: <code style="color: var(--text)">P(A ∩ B) = P(A) P(B)</code></li>
+          <li>
+            Bayes’ rule:
+            <code style="color: var(--text)">P(A | B) = P(B | A) P(A) / P(B)</code>
+          </li>
+          <li>Inclusion–exclusion for unions of overlapping events</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Random variables</h2>
+        <p>
+          A random variable <code style="color: var(--text)">X : Ω → ℝ</code> is a measurable
+          function that turns outcomes into numbers. Its distribution is summarized by the
+          cumulative distribution function
+          <code style="color: var(--text)">F(x) = P(X ≤ x)</code>, which is non-decreasing,
+          right-continuous, and has limits 0 and 1.
+        </p>
+        <p>
+          Discrete variables carry a probability mass function
+          <code style="color: var(--text)">p(x) = P(X = x)</code>; absolutely continuous variables
+          carry a density <code style="color: var(--text)">f</code> with
+          <code style="color: var(--text)">P(X ∈ A) = ∫_A f(x) dx</code>. Joint, marginal, and
+          conditional distributions extend the same ideas to random vectors, with independence
+          meaning the joint factors into marginals.
+        </p>
+        <ul>
+          <li>Bernoulli, Binomial, Poisson for counts and events</li>
+          <li>Normal, Exponential, Gamma, Beta for continuous magnitudes</li>
+          <li>Transformations via change of variables and the Jacobian</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Expectation</h2>
+        <p>
+          Expectation is the integral of a random variable against its distribution:
+          <code style="color: var(--text)">E[X] = ∫ x dF(x)</code>. It is linear—
+          <code style="color: var(--text)">E[aX + bY] = a E[X] + b E[Y]</code>—regardless of
+          dependence, which makes it the workhorse for reasoning about averages.
+        </p>
+        <p>
+          Variance <code style="color: var(--text)">Var(X) = E[(X − E[X])²]</code> measures spread;
+          covariance and correlation measure co-movement. The law of the unconscious statistician
+          gives <code style="color: var(--text)">E[g(X)] = ∫ g(x) dF(x)</code>, and the tower
+          property <code style="color: var(--text)">E[X] = E[E[X | Y]]</code> lets us compute
+          expectations by conditioning on whatever structure is convenient.
+        </p>
+        <ul>
+          <li>Moments, moment generating functions, and characteristic functions</li>
+          <li>Conditional expectation as the best mean-square predictor</li>
+          <li>Jensen’s inequality: <code style="color: var(--text)">φ(E[X]) ≤ E[φ(X)]</code> for convex <code style="color: var(--text)">φ</code></li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Inequalities</h2>
+        <p>
+          Inequalities bound probabilities and expectations when exact distributions are out of
+          reach. They are the glue that turns moment information into tail control, and tail
+          control into convergence.
+        </p>
+        <ul>
+          <li>
+            <strong>Markov:</strong>
+            <code style="color: var(--text)">P(X ≥ a) ≤ E[X] / a</code> for
+            <code style="color: var(--text)">X ≥ 0</code>, <code style="color: var(--text)">a &gt; 0</code>.
+          </li>
+          <li>
+            <strong>Chebyshev:</strong>
+            <code style="color: var(--text)">P(|X − μ| ≥ kσ) ≤ 1/k²</code>, a distribution-free
+            spread bound.
+          </li>
+          <li>
+            <strong>Cauchy–Schwarz:</strong>
+            <code style="color: var(--text)">E[XY]² ≤ E[X²] E[Y²]</code>, the probabilistic twin of
+            the inner-product inequality.
+          </li>
+          <li>
+            <strong>Hoeffding:</strong> sub-Gaussian tail bound for bounded, independent sums—
+            foundational for concentration.
+          </li>
+          <li>
+            <strong>Jensen:</strong> convex functions push expectation up, concave functions pull
+            it down.
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Convergence of random variables</h2>
+        <p>
+          Because random variables are functions, they can converge in several inequivalent senses,
+          and picking the right mode matters for what a limit actually says.
+        </p>
+        <ul>
+          <li>
+            <strong>Almost surely:</strong>
+            <code style="color: var(--text)">P(X_n → X) = 1</code>—convergence happens on the full
+            probability set.
+          </li>
+          <li>
+            <strong>In probability:</strong>
+            <code style="color: var(--text)">P(|X_n − X| &gt; ε) → 0</code> for every
+            <code style="color: var(--text)">ε &gt; 0</code>.
+          </li>
+          <li>
+            <strong>In <em>L<sup>p</sup></em>:</strong>
+            <code style="color: var(--text)">E[|X_n − X|^p] → 0</code>, strongest when
+            <code style="color: var(--text)">p</code> is large.
+          </li>
+          <li>
+            <strong>In distribution:</strong>
+            <code style="color: var(--text)">F_n(x) → F(x)</code> at continuity points of
+            <code style="color: var(--text)">F</code>—only the laws agree, not the variables.
+          </li>
+        </ul>
+        <p>
+          Almost sure and <em>L<sup>p</sup></em> convergence imply convergence in probability,
+          which implies convergence in distribution; the reverse directions fail in general. The
+          two headline theorems sit on top of this ladder: the <strong>law of large numbers</strong>
+          gives <code style="color: var(--text)">X̄_n → μ</code>, and the
+          <strong>central limit theorem</strong> gives
+          <code style="color: var(--text)">√n (X̄_n − μ) / σ ⇒ N(0, 1)</code>—the reason Gaussian
+          approximations show up everywhere in inference.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p><a href="index.html">← Back to home</a></p>
+    </footer>
+  </body>
+</html>

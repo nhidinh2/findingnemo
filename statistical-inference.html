@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistical inference — Nemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" title="ni’s memo">nemo<span>.</span></a>
+        <nav class="nav" aria-label="Main">
+          <a href="probability.html">Probability</a>
+          <a href="statistical-inference.html" aria-current="page">Statistical inference</a>
+          <a href="statistical-models-and-methods.html">Statistical models &amp; methods</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <h1 class="page-title">Statistical inference</h1>
+      <p class="page-sub">
+        Inference turns observations into statements about parameters, predictions, or decisions—
+        while being explicit about assumptions, variability, and what could go wrong if the model
+        is misspecified.
+      </p>
+      <section class="content-section">
+        <h2>Estimation</h2>
+        <p>
+          Point estimators compress data into a best guess: method of moments, maximum likelihood,
+          and Bayesian posteriors each encode different priorities (computation, optimality under a
+          model, or prior knowledge).
+        </p>
+        <ul>
+          <li>Bias, variance, and the bias–variance tradeoff in prediction</li>
+          <li>Consistency: what happens as sample size grows</li>
+          <li>Robustness when likelihoods are imperfect</li>
+        </ul>
+      </section>
+      <section class="content-section">
+        <h2>Uncertainty quantification</h2>
+        <p>
+          Confidence intervals and credible intervals answer different questions but both aim to
+          communicate range—not certainty—around an estimate. Standard errors, bootstrap
+          distributions, and posterior spreads are practical ways to obtain them.
+        </p>
+      </section>
+      <section class="content-section">
+        <h2>Testing and decisions</h2>
+        <p>
+          Hypothesis tests formalize evidence against a null model; p-values and error rates should
+          be read alongside effect sizes and study design. For decisions, prediction risk and
+          utility matter as much as statistical significance.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p><a href="index.html">← Back to home</a></p>
+    </footer>
+  </body>
+</html>
