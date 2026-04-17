@@ -17,6 +17,7 @@ export default defineConfig({
           __dirname,
           "statistical-models-and-methods.html"
         ),
+        "time-series": resolve(__dirname, "time-series.html"),
       },
     },
   },
