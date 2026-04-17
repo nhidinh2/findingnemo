@@ -11,6 +11,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+        },
+        svg: { fontCache: "global" }
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -62,6 +76,19 @@
           in-sample fit into claims that travel to new environments.
         </p>
       </section>
+
+      <section class="content-section">
+        <h2><a href="time-series.html" style="text-decoration: none">Time series →</a></h2>
+        <p>
+          When observations arrive in order, their dependence becomes a feature rather than a
+          nuisance. Stationarity, AR/MA/ARMA models, ACF/PACF identification, Yule–Walker and
+          CLS/MLE estimation, ARIMA/SARIMA, and forecasting all live on a dedicated page.
+        </p>
+        <p>
+          <a href="time-series.html">Open time series →</a>
+        </p>
+      </section>
+
     </main>
     <footer class="site-footer">
       <p><a href="index.html">← Back to home</a></p>
